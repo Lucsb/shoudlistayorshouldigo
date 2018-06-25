@@ -1,0 +1,78 @@
+
+@import url('https://fonts.googleapis.com/css?family=Autour+One|Baloo|Baloo+Bhaina|Bowlby+One|Bowlby+One+SC|Gravitas+One|Margarine|Spicy+Rice');
+
+$red: #ea5458;
+$yellow: #f8d696;
+$darkred: #731517;
+
+body{
+	//font-family: 'Bowlby One SC', cursive; //
+	//font-family: 'Baloo', cursive; //
+	font-family: 'Bowlby One', cursive; //
+	text-align: center;
+	background: linear-gradient(to bottom right, #ea5458, #c64549);
+	height: 100vh;
+	border: 10px solid #537680;
+	margin: 0;
+	padding: 0;
+	color: #fff;
+	box-sizing: border-box;
+}
+
+
+.hide {
+    opacity: 0;
+    transition: all 0.8s;
+    visibility: hidden;
+} 
+.show{ 
+    opacity: 1;
+    transition: all 0.8s;
+    visibility: visible;
+}
+
+
+h1{
+	font-size: 4rem;
+	text-shadow: 2px 3px $yellow;
+}
+
+.or{
+	font-size: 1rem;
+	display: block;
+}
+
+.line2{
+	font-size: 2rem;
+	color: $darkred;
+	text-shadow: 2px 3px #fff;
+}
+// .line1{
+//   -webkit-animation-name: slideOutUp;
+//   animation-name: slideOutUp;
+// }
+
+button{
+	background: #f8d696;
+	padding: 1rem;
+	font-weight: 700;
+	color: $red;
+	font-size: 1rem;
+	border: 0;
+	border-radius: 100%;
+}
+
+h1 {
+  -vendor-animation-duration: 3s;
+  -vendor-animation-delay: 2s;
+  -vendor-animation-iteration-count: infinite;
+}
+
+
+h2#result{
+	color: $yellow;
+	font-size: 3rem;
+}
+
+
+
