@@ -1,14 +1,14 @@
-@import url("https://fonts.googleapis.com/css?family=Autour+One|Baloo|Baloo+Bhaina|Bowlby+One|Bowlby+One+SC|Gravitas+One|Margarine|Spicy+Rice");
+@import url("https://fonts.googleapis.com/css?family=Anton|Rubik:900");
 body {
-  font-family: 'Bowlby One', cursive;
+  font-family: 'Rubik', cursive;
   text-align: center;
-  background: linear-gradient(to bottom right, #ea5458, #c64549);
   height: 100vh;
-  border: 10px solid #537680;
   margin: 0;
   padding: 0;
-  color: #fff;
-  box-sizing: border-box; }
+  color: #000;
+  font-weight: 900;
+  box-sizing: border-box;
+  text-transform: uppercase; }
 
 .hide {
   opacity: 0;
@@ -21,23 +21,20 @@ body {
   visibility: visible; }
 
 h1 {
-  font-size: 4rem;
-  text-shadow: 2px 3px #f8d696; }
+  font-size: 6rem; }
 
 .or {
-  font-size: 1rem;
+  font-size: 5rem;
   display: block; }
 
 .line2 {
-  font-size: 2rem;
-  color: #731517;
+  font-size: 6rem;
   text-shadow: 2px 3px #fff; }
 
 button {
   background: #f8d696;
   padding: 1rem;
   font-weight: 700;
-  color: #ea5458;
   font-size: 1rem;
   border: 0;
   border-radius: 100%; }
