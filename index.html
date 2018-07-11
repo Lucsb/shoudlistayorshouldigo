@@ -1,93 +1,97 @@
+
 <!DOCTYPE html>
-<html lang="en-AU">
+<html lang="en">
+
 <head>
+  <meta charset="utf-8">
+  <title>Ask the internet!</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-P4367CD');</script>
+  <!-- End Google Tag Manager -->
 
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-P4367CD');</script>
-<!-- End Google Tag Manager -->
+  <link rel="stylesheet" type="text/css" href="css/style.css">
 
-<link rel="stylesheet" type="text/css" href="css/style.css">
-
-  <link rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css"
-  integrity="sha384-OHBBOqpYHNsIqQy8hL1U+8OXf9hH6QRxi0+EODezv82DfnZoV7qoHAZDwMwEJvSw"
-  crossorigin="anonymous">
-
+  <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css" integrity="sha384-OHBBOqpYHNsIqQy8hL1U+8OXf9hH6QRxi0+EODezv82DfnZoV7qoHAZDwMwEJvSw" crossorigin="anonymous">
   
 </head>
 <body>
 
-<audio id="intro" class="songs" autoplay loop>
-  <source src="intro.mp3" type="audio/mpeg">
-</audio>
-<audio id="song" class="songs">
-  <source src="song.mp3" type="audio/mpeg">
-</audio>
+  <audio id="intro" class="songs" autoplay loop>
+    <source src="intro.mp3" type="audio/mpeg">
+  </audio>
+  <audio id="song" class="songs">
+    <source src="song.mp3" type="audio/mpeg">
+  </audio>
 
-<h1 class="animated XXinfinite rollIn">Should you stay</h1>
-<span class="or">or</span> 
-<span class="line2">should you go?</span>
+  <h1 class="animated XXinfinite rollIn">
+    <span class="should-1">Should</span> 
+    <span class="i-1">I</span> 
+    <span class="stay">stay</span> 
+    <span class="or">or</span> 
+    <span class="should-2">should</span>
+    <span class="i-2">I</span>
+    <span class="go">go?</span>
+  </h1>
 
-<div id="action">
-	<button class="animated wobble" onclick="btnFunction()">?</button>
-</div>
+  <div id="action">
+  	<button id="btn1 class="animated wobble" onclick="btnFunction()">?</button>
+  </div>
 
+  <div class="hide animated infinite " id="answer">
+  	<h2 id="result" class="animated"></h2>
+  	<button id="btn2" class="animated XXinfinite wobble" onclick="replayFunction()">Ask again.</button>
+  </div>
 
-<div class="hide animated infinite " id="answer">
-	<h2 id="result" class="animated"></h2>
-	<button id="btn2" class="animated XXinfinite wobble" onclick="replayFunction()">Ask again.</button>
-</div>
+  <script>
 
-<script>
+  function btnFunction() {
+      randomNumber = Math.random() >= 0.5;
+      if (randomNumber === true) {
+      	document.getElementById("result").innerHTML = 'You should <span>stay!</span>';
+  	} else {
+  		 document.getElementById("result").innerHTML = 'You should <span>go!</span';
+  	}
+  	var element = document.getElementById("action");
+      element.classList.add("hide");
+      element.classList.remove("show");
+  	var element = document.getElementById("btn2");
+      element.classList.add("show");
+      element.classList.remove("hide");
+  	var element = document.getElementById("answer");
+      element.classList.add("show");
+      element.classList.add("bounce");
+      element.classList.remove("hide");
+      var intro = document.getElementById("intro"); 
+      intro.pause(); 
+      var song = document.getElementById("song"); 
+      song.play(); 
+  }
 
-function btnFunction() {
-    randomNumber = Math.random() >= 0.5;
-    if (randomNumber === true) {
-    	document.getElementById("result").innerHTML = 'You should stay!';
-	} else {
-		 document.getElementById("result").innerHTML = 'You should go!';
-	}
-	var element = document.getElementById("action");
-    element.classList.add("hide");
-    element.classList.remove("show");
-	var element = document.getElementById("btn2");
-    element.classList.add("show");
-    element.classList.remove("hide");
-	var element = document.getElementById("answer");
-    element.classList.add("show");
-    element.classList.add("bounce");
-    element.classList.remove("hide");
-    var intro = document.getElementById("intro"); 
-    intro.pause(); 
-    var song = document.getElementById("song"); 
-    song.play(); 
-}
+  function replayFunction() {
+  	var element = document.getElementById("answer");
+      element.classList.add("hide");
+      element.classList.remove("show");
+  	var element = document.getElementById("action");
+      element.classList.add("show");
+      element.classList.remove("hide");
+      var intro = document.getElementById("intro"); 
+      intro.play(); 
+      var song = document.getElementById("song"); 
+      song.pause(); 
+      song.currentTime = 0;
+  }
 
-function replayFunction() {
-	var element = document.getElementById("answer");
-    element.classList.add("hide");
-    element.classList.remove("show");
-	var element = document.getElementById("action");
-    element.classList.add("show");
-    element.classList.remove("hide");
-    var intro = document.getElementById("intro"); 
-    intro.play(); 
-    var song = document.getElementById("song"); 
-    song.pause(); 
-    song.currentTime = 0;
-}
-
-</script>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P4367CD"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+  </script>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P4367CD"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
 </body>
 
 </html>
